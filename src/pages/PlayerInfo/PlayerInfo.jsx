@@ -3,8 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import styles from "./PlayerInfo.module.css";
 
 export default function PlayerInfo({ allPlayers }) {
-  const { username } = useParams();
-  const player = allPlayers.find((p) => p.username === username);
+  const params = useParams();
+
+  const player = allPlayers.find((p) => p.username === params.username);
 
   return (
     <div className={styles.container}>

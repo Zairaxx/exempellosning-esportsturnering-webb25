@@ -30,8 +30,8 @@ const PlayerForm = ({ teamA, teamB, addPlayer }) => {
         if ([...teamA , ...teamB].find((p) => p.username === username)) {
             alert("Användarnamn är redan taget! Välj ett annat");
         } else {
-            addPlayer(newPlayer);
-            navigate("/");
+          addPlayer(newPlayer);
+          navigate("/");
         }
     };
 
@@ -85,7 +85,7 @@ const PlayerForm = ({ teamA, teamB, addPlayer }) => {
           {teamB.length < 5 && <option value="B">Lag B</option>}
         </select>
 
-        <button type="submit" className={styles.submit}>Lägg till</button>
+        {teamA.length < 5 && teamB.length < 5 ? <button type="submit" className={styles.submit}>Lägg till</button> : <strong className={styles.error}>Bägge lag är fulla!</strong>}
       </form>
       )
 }

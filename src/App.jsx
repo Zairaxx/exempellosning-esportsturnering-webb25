@@ -101,9 +101,9 @@ const defaultTeamB = [
 
   const addPlayer = (player) => {
     console.log(player, player.team);
-    if (player.team === "A" && teamA.length < 5) {
+    if (player.team === "A") {
       setTeamA([...teamA, player]);
-    } else if (player.team === "B" && teamB.length < 5) {
+    } else if (player.team === "B") {
       setTeamB([...teamB, player]);
     } else {
       console.log("Could not add player to any team.")
@@ -117,26 +117,13 @@ const defaultTeamB = [
       setTeamB(teamB.filter((p) => p.username !== username));
     }
   };
+
   return (
     <Router>
       <NavBar/>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              teamA={teamA}
-              teamB={teamB}
-              removePlayer={removePlayer}
-            />
-          }
-        />
-        <Route
-          path="/addplayer"
-          element={
-            <AddPlayer teamA={teamA} teamB={teamB} addPlayer={addPlayer}/>
-          }
-        />
+        <Route path="/" element={<Home teamA={teamA} teamB={teamB} removePlayer={removePlayer}/>}/>
+        <Route path="/addplayer" element={<AddPlayer teamA={teamA} teamB={teamB} addPlayer={addPlayer}/>} />
         <Route
           path="/playerinfo/:username" 
           element={<PlayerInfo allPlayers={[...teamA, ...teamB]} />}

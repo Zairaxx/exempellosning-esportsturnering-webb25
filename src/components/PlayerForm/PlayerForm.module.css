@@ -37,3 +37,9 @@ select {
 .submit:hover {
   background: #449d44;
 }
+
+.error {
+  color:red;
+  text-align: center;
+  font-size:32px;
+}
