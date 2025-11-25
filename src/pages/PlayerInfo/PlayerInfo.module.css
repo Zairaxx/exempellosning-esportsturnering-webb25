@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.card {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.avatar {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin: 0.4rem 0;
+  font-size: 1.1rem;
+}
+
+.backBtn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.4rem;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.backBtn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}

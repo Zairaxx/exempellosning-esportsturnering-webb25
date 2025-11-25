@@ -1,0 +1,23 @@
+// PlayerInfo.jsx
+import { useParams, Link } from "react-router-dom";
+import styles from "./PlayerInfo.module.css";
+
+export default function PlayerInfo({ allPlayers }) {
+  const { username } = useParams();
+  const player = allPlayers.find((p) => p.username === username);
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <h2>{player.username}</h2>
+        <p>{player.firstName} {player.lastName}</p>
+        <p>Ålder: {player.age}</p>
+        <p>Land: {player.country}</p>
+        <p>Ranking: {player.ranking}</p>
+        <Link to="/" className={styles.backBtn}>
+          Tillbaka
+        </Link>
+      </div>
+    </div>
+  );
+}
