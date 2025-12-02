@@ -85,7 +85,7 @@ const PlayerForm = ({ teamA, teamB, addPlayer }) => {
           {teamB.length < 5 && <option value="B">Lag B</option>}
         </select>
 
-        {teamA.length < 5 && teamB.length < 5 ? <button type="submit" className={styles.submit}>Lägg till</button> : <strong className={styles.error}>Bägge lag är fulla!</strong>}
+        {teamA.length < 5 || teamB.length < 5 ? <button type="submit" className={styles.submit}>Lägg till</button> : <strong className={styles.error}>Bägge lag är fulla!</strong>}
       </form>
       )
 }
