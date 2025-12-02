@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom'
 import styles from './PlayerList.module.css'
+import { useContext } from 'react'
+import { TeamContext } from '../../context/TeamContext'
+const PlayerList = ({team}) => {
 
-const PlayerList = ({teamArray, team, removePlayer}) => {
+   const { teamA, teamB, removePlayer } = useContext(TeamContext)
+
+   let teamArray;
+
+   if(team === "A"){
+    teamArray = teamA;
+   } else {
+    teamArray = teamB;
+   }
+
 
     return(
     <div className={styles.team}>

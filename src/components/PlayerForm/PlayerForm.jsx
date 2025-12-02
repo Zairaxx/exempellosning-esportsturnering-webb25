@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from './PlayerForm.module.css';
+import { TeamContext } from "../../context/TeamContext";
 
-const PlayerForm = ({ teamA, teamB, addPlayer }) => {
+const PlayerForm = () => {
+
+      const { teamA, teamB, addPlayer } = useContext(TeamContext);
+
       const [username, setUsername] = useState("");
       const [firstName, setFirstName] = useState("");
       const [lastName, setLastName] = useState("");

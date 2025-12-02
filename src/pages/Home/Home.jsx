@@ -2,12 +2,15 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import PlayerList from "../../components/PlayerList/PlayerList";
+import { useContext } from "react";
+import { TeamContext } from "../../context/TeamContext";
 
-export default function Home({ teamA, teamB, removePlayer}) {
+export default function Home() {
+
   return (
     <div className={styles.container}>
-      <PlayerList teamArray={teamA} team="A" removePlayer={removePlayer} />
-      <PlayerList teamArray={teamB} team="B" removePlayer={removePlayer} />
+      <PlayerList team="A" />
+      <PlayerList team="B" />
     </div>
   );
 }
